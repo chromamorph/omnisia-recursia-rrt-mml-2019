@@ -195,11 +195,11 @@ The RecurSIA algorithm is implemented in the following Java source file:
 
 The RRT algorithm is implemented in the removeRedundantTranslators() method that starts in line 284 in the TEC class definition:
 
-[/Points/src/com/chromamorph/points022/TEC.java#L284](/Points/src/com/chromamorph/points022/TEC.java#L284)
+[/Points/src/com/chromamorph/points022/TEC.java](/Points/src/com/chromamorph/points022/TEC.java#L284)
 
 The removeRedundantTranslators() method of the Encoding class runs the TEC removeRedundantTranslators() method on each TEC that it contains, see line 820 in the file
 
-[/Points/src/com/chromamorph/points022/Encoding.java#L820](/Points/src/com/chromamorph/points022/Encoding.java#L280)
+[/Points/src/com/chromamorph/points022/Encoding.java](/Points/src/com/chromamorph/points022/Encoding.java#L820)
 
 
 
