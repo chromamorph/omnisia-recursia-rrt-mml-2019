@@ -204,5 +204,7 @@ The removeRedundantTranslators() method of the Encoding class runs the TEC remov
 
 
 David Meredith
-24 July 2019, 00:02
+
+24 July 2019
+
 Brenderup, Fyn, Denmark
