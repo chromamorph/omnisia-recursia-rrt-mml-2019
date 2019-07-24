@@ -201,7 +201,7 @@ The removeRedundantTranslators() method of the Encoding class runs the TEC remov
 
 [/Points/src/com/chromamorph/points022/Encoding.java](/Points/src/com/chromamorph/points022/Encoding.java#L820)
 
-
+------
 
 David Meredith
 
