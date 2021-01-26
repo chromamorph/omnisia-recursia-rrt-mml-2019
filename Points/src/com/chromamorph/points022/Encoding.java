@@ -279,7 +279,7 @@ public class Encoding {
 
 	public void drawOccurrenceSetsToFile(final String outputFilePath, final boolean diatonicPitch) {
 		try {
-			javax.swing.SwingUtilities.invokeAndWait(new Runnable() {
+			final Runnable drawRunnable = new Runnable() {
 				public void run() {
 					JFrame frame = new JFrame();
 					frame.setMinimumSize(new Dimension(DrawPoints.drawWindowWidth,DrawPoints.drawWindowHeight+23));
@@ -289,7 +289,8 @@ public class Encoding {
 					embed.init();
 					frame.pack();
 				}
-			});
+			};
+			javax.swing.SwingUtilities.invokeAndWait(drawRunnable);
 		} catch (InvocationTargetException e) {
 			e.printStackTrace();
 		} catch (InterruptedException e) {
