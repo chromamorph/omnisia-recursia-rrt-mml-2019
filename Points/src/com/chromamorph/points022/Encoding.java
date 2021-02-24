@@ -276,7 +276,6 @@ public class Encoding {
 			}
 		});
 	}
-
 	
 	public void drawOccurrenceSetsToFile(final String outputFilePath, final boolean diatonicPitch) {
 		try {
