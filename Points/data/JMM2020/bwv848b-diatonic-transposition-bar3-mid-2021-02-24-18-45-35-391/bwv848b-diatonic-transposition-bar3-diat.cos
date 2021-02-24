@@ -1,0 +1,29 @@
+T(P(p(768,25),p(864,24),p(960,23),p(1056,24)),V(v(0,0),v(0,9),v(480,8),v(1824,6)))
+T(P(p(480,31),p(576,23),p(576,32)),V(v(0,0),v(2496,-3)))
+T(P(p(1152,29),p(1344,27)),V(v(0,0),v(1056,3),v(1152,2)))
+T(P(p(1536,24),p(1920,23),p(2112,28)),V(v(0,0),v(384,-1),v(768,-2)))
+T(P(p(1728,23),p(1824,22)),V(v(0,0),v(288,8)))
+T(P(p(384,30),p(672,33),p(1152,34)),V(v(0,0)))
+
+numberOfNotes 42
+tatumsPerBar null
+barOneStartsAt null
+compressionRatio 1.6153846153846154
+runningTime 80
+encodingLength 26
+encodingLengthWithoutResidualPointSet 23
+numberOfResidualPoints 3
+percentageOfResidualPoints 7.142857142857143
+compressionRatioWithoutResidualPointSet 1.6956521739130435
+title bwv848b-diatonic-transposition-bar3.mid
+numberOfTECs 6
+inputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\Points\data\JMM2020\bwv848b-diatonic-transposition-bar3.mid
+outputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\Points\data\JMM2020\bwv848b-diatonic-transposition-bar3-mid-2021-02-24-18-45-35-391\bwv848b-diatonic-transposition-bar3-diat.cos
+logFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\Points\data\JMM2020\bwv848b-diatonic-transposition-bar3-mid-2021-02-24-18-45-35-391\bwv848b-diatonic-transposition-bar3-diat.log
+outputFileExtension cos
+isDiatonic true
+withoutChannel10 false
+encoderName com.chromamorph.points022.COSIATECEncoding
+forMirex false
+mode Raw
+topNPatterns 0
