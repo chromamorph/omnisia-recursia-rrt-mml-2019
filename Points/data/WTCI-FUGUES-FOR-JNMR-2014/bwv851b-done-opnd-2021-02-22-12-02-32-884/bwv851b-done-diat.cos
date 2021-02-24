@@ -1,0 +1,33 @@
+T(P(p(41,29),p(42,28),p(44,29),p(45,28),p(46,27),p(48,28),p(49,27),p(50,26),p(51,27)),V(v(0,0),v(60,-8),v(72,-9),v(84,-10),v(152,1),v(236,-1),v(312,2),v(324,1),v(336,0),v(408,6),v(412,5),v(416,4)))
+T(P(p(29,27),p(30,26),p(31,25),p(32,27),p(33,26),p(34,25),p(35,24)),V(v(0,0),v(1,-1),v(24,-3),v(36,3),v(60,-7),v(120,-7),v(144,7),v(156,8),v(216,0),v(288,-10),v(372,3),v(396,4),v(408,5)))
+T(P(p(2,24),p(4,25),p(6,26),p(8,27),p(10,25),p(12,26),p(13,24),p(14,23),p(15,24),p(16,29),p(20,27),p(24,28)),V(v(0,0),v(60,-7),v(144,4),v(192,-10),v(204,-3),v(324,0),v(396,-7),v(456,-7),v(468,0)))
+T(P(p(250,15),p(304,19),p(306,18),p(308,17),p(312,18)),V(v(0,0),v(118,3),v(130,2),v(130,4),v(142,7),v(204,8),v(204,10)))
+T(P(p(132,29),p(136,27),p(138,26),p(142,27)),V(v(0,0),v(26,-4),v(36,-8),v(48,-7),v(122,3),v(134,-10),v(158,-5),v(182,6),v(206,-8),v(278,-8)))
+T(P(p(77,25),p(78,24),p(79,25),p(80,25),p(81,24),p(82,23)),V(v(0,0),v(132,1),v(144,-8),v(396,4),v(408,-5)))
+T(P(p(242,14),p(244,15),p(246,16),p(248,17),p(252,16)),V(v(0,0),v(142,4),v(168,12),v(264,3),v(264,5)))
+T(P(p(37,21),p(38,20),p(39,21)),V(v(0,0),v(60,6),v(72,7),v(84,6),v(201,7),v(216,-7),v(258,6),v(324,-1),v(336,-2),v(465,10)))
+T(P(p(74,26),p(86,25),p(98,24)),V(v(0,0),v(26,1),v(26,6),v(29,-5),v(30,-1),v(30,4),v(33,-6),v(266,-6),v(278,-9),v(278,-7),v(281,5),v(285,4)))
+T(P(p(256,31),p(262,31),p(265,32),p(266,33),p(267,32),p(268,27),p(272,29)),V(v(0,0),v(12,-13),v(60,3)))
+
+numberOfNotes 715
+tatumsPerBar 12
+barOneStartsAt null
+compressionRatio 2.69811320754717
+runningTime 12015
+encodingLength 265
+encodingLengthWithoutResidualPointSet 233
+numberOfResidualPoints 32
+percentageOfResidualPoints 4.475524475524476
+compressionRatioWithoutResidualPointSet 2.9313304721030042
+title bwv851b-done.opnd
+numberOfTECs 24
+inputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv851b-done.opnd
+outputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv851b-done-opnd-2021-02-22-12-02-32-884\bwv851b-done-diat.cos
+logFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv851b-done-opnd-2021-02-22-12-02-32-884\bwv851b-done-diat.log
+outputFileExtension cos
+isDiatonic true
+withoutChannel10 false
+encoderName com.chromamorph.points022.COSIATECEncoding
+forMirex false
+mode Raw
+topNPatterns 10

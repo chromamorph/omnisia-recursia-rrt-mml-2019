@@ -94,6 +94,7 @@ public class OMNISIA {
 	private static int TOP_N_PATTERNS				= 0; //Limits output to top n patterns (if 0, then all patterns returned)
 	private static Algorithm RECURSIA_ALGORITHM		= Algorithm.COSIATEC;
 	private static boolean SORT_BY_PATTERN_SIZE		= false;
+	private static boolean DRAW_POINT_SET			= false;
 
 
 	////////////////////
@@ -133,6 +134,7 @@ public class OMNISIA {
 	private static String TOP_N_PATTERNS_SWITCH		= "top";
 	private static String RECURSIA_ALGORITHM_SWITCH	= "recalg";
 	private static String SORT_BY_PATTERN_SIZE_SWITCH = "sortpat";
+	private static String DRAW_POINT_SET_SWITCH		= "drawps";
 
 
 
@@ -210,6 +212,10 @@ public class OMNISIA {
 	
 	private static void getSortByPatternSize(String[] args) {
 		SORT_BY_PATTERN_SIZE = getBooleanValue(SORT_BY_PATTERN_SIZE_SWITCH, args);
+	}
+	
+	private static void getDrawPointSet(String[] args) {
+		DRAW_POINT_SET = getBooleanValue(DRAW_POINT_SET_SWITCH, args);
 	}
 
 	private static void getHelp(String[] args) {
@@ -582,6 +588,7 @@ public class OMNISIA {
 				"Top N Patterns (-"+TOP_N_PATTERNS_SWITCH+"): " + TOP_N_PATTERNS,
 				"Basic algorithm used by RecurSIA (-"+RECURSIA_ALGORITHM_SWITCH+"): " + RECURSIA_ALGORITHM,
 				"Sort TECs by decreasing pattern size (-"+SORT_BY_PATTERN_SIZE_SWITCH+"): " + SORT_BY_PATTERN_SIZE,
+				"Draw input point set (-"+DRAW_POINT_SET_SWITCH+"): " + DRAW_POINT_SET,
 				""
 				);		
 	}
@@ -692,7 +699,10 @@ public class OMNISIA {
 				"",
 				"-"+SORT_BY_PATTERN_SIZE_SWITCH+"\tWhen using COSIATEC, getBestTEC sorts TECs",
 				"\twith preference given to TECs with larger patterns.",
-				""
+				"",
+				"-"+DRAW_POINT_SET_SWITCH+"\tGenerates a PNG file and a PTS file of the input point set.",
+				"\tIf the -"+DIATONIC_PITCH_SWITCH+" switch is selected, then the output point set uses",
+				"\tmorphetic pitch."
 				);
 	}
 
@@ -734,17 +744,46 @@ public class OMNISIA {
 		if (OUTPUT_FILE == null)
 			writeSwitchesToFile(args);
 		Encoding encoding = null;
-		switch (BASIC_ALGORITHM) {
-		case COSIATEC: encoding = runCOSIATEC(); break;
-		case SIATECCompress: encoding = runSIATECCompress(); break;
-		case SIA: encoding = runSIA(); break;    
-		case SIATEC: encoding = runSIATEC(); break;
-		case Forth: encoding = runForth(); break;
-		case RecurSIA: encoding = runRecurSIA(); break;
-		case NONE: encoding = new COSIATECEncoding(INPUT_FILE.getAbsolutePath());
-		}
-		encoding.setTitle(COMMAND_LINE);
-
+		if (!DRAW_POINT_SET) {
+			switch (BASIC_ALGORITHM) {
+			case COSIATEC: encoding = runCOSIATEC(); break;
+			case SIATECCompress: encoding = runSIATECCompress(); break;
+			case SIA: encoding = runSIA(); break;    
+			case SIATEC: encoding = runSIATEC(); break;
+			case Forth: encoding = runForth(); break;
+			case RecurSIA: encoding = runRecurSIA(); break;
+			case NONE: encoding = new COSIATECEncoding(INPUT_FILE.getAbsolutePath());
+			}
+			encoding.setTitle(COMMAND_LINE);
+		} else //DRAW_POINT_SET is true
+			encoding = new Encoding(
+//					PointSet dataset,
+					new PointSet(
+							INPUT_FILE.getAbsolutePath(),
+							DIATONIC_PITCH,
+							WITHOUT_CHANNEL_10),
+//					String inputFilePathString,
+					INPUT_FILE.getAbsolutePath(),
+//					String outputDirectoryPathString,
+					OUTPUT_DIR==null?null:OUTPUT_DIR.getAbsolutePath(),				
+//					boolean isDiatonic,
+					DIATONIC_PITCH,
+//					boolean withoutChannel10,
+					WITHOUT_CHANNEL_10,
+//					String outputFileExtension,
+					"pts",
+//					int topNPatterns,
+					TOP_N_PATTERNS,
+//					boolean forMirex,
+					MIREX,
+//					boolean segmentMode,
+					SEGMENT_MODE,
+//					boolean bbMode,
+					BB_MODE,
+//					String omnisiaOutputFilePathString					
+					(OUTPUT_FILE!=null?OUTPUT_FILE.getAbsolutePath():null)
+					);
+			
 //		Print dataset used for analysis to file
 		File outputDir;
 		String outputDatasetFilePath;
@@ -766,7 +805,7 @@ public class OMNISIA {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
-		if (DRAW && encoding != null) {
+		if ((DRAW || DRAW_POINT_SET) && encoding != null) {
 			String outputImageFilePath;
 			if (OUTPUT_FILE == null) {
 				outputDir = OUTPUT_DIR;
@@ -776,10 +815,12 @@ public class OMNISIA {
 				outputDir = OUTPUT_FILE.getParentFile();			
 				outputImageFilePath = outputDir.toPath().resolve(OUTPUT_FILE.toPath().getFileName()).toAbsolutePath().toString();			
 			}
-			if (!(BASIC_ALGORITHM == BasicAlgorithm.RecurSIA))
+			if (DRAW && !(BASIC_ALGORITHM == BasicAlgorithm.RecurSIA))
 				encoding.drawOccurrenceSetsToFile(outputImageFilePath,DIATONIC_PITCH);
 //			else
 //				encoding.drawRecursiveTecsToFile(outputImageFilePath,DIATONIC_PITCH);
+			else if (DRAW_POINT_SET)
+				encoding.drawPointSet(outputImageFilePath,DIATONIC_PITCH);
 		}
 	}
 
@@ -986,6 +1027,7 @@ public class OMNISIA {
 				);
 	}
 
+	
 	////////////////////
 	//	Main method
 	public static void main(String[] args) throws MissingTieStartNoteException {
@@ -1022,6 +1064,7 @@ public class OMNISIA {
 		getSegmentMode(args);
 		getBBMode(args);
 		getSortByPatternSize(args);
+		getDrawPointSet(args);
 		try {
 			getCTB(args);
 			getR(args);
@@ -1053,7 +1096,7 @@ public class OMNISIA {
 		}
 		printParsedParameterValues();
 		try {
-			analyse(args);
+				analyse(args);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IncompatibleRecurSIAAlgorithmException e) {
