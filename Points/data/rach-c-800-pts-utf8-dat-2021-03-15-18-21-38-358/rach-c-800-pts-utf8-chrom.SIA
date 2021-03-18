@@ -1,0 +1,24 @@
+
+
+numberOfNotes 0
+tatumsPerBar null
+barOneStartsAt null
+compressionRatio NaN
+runningTime 4
+encodingLength 0
+encodingLengthWithoutResidualPointSet 0
+numberOfResidualPoints 0
+percentageOfResidualPoints NaN
+compressionRatioWithoutResidualPointSet NaN
+title rach-c-800-pts-utf8.dat
+numberOfTECs 0
+inputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\Points\data\rach-c-800-pts-utf8.dat
+outputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\Points\data\rach-c-800-pts-utf8-dat-2021-03-15-18-21-38-358\rach-c-800-pts-utf8-chrom.SIA
+logFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\Points\data\rach-c-800-pts-utf8-dat-2021-03-15-18-21-38-358\rach-c-800-pts-utf8-chrom.log
+outputFileExtension SIA
+isDiatonic false
+withoutChannel10 false
+encoderName com.chromamorph.points022.SIAEncoding
+forMirex false
+mode Raw
+topNPatterns 0

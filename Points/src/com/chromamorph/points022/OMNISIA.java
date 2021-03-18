@@ -815,12 +815,8 @@ public class OMNISIA {
 				outputDir = OUTPUT_FILE.getParentFile();			
 				outputImageFilePath = outputDir.toPath().resolve(OUTPUT_FILE.toPath().getFileName()).toAbsolutePath().toString();			
 			}
-			if (DRAW && !(BASIC_ALGORITHM == BasicAlgorithm.RecurSIA))
+			if (!(BASIC_ALGORITHM == BasicAlgorithm.RecurSIA))
 				encoding.drawOccurrenceSetsToFile(outputImageFilePath,DIATONIC_PITCH);
-//			else
-//				encoding.drawRecursiveTecsToFile(outputImageFilePath,DIATONIC_PITCH);
-			else if (DRAW_POINT_SET)
-				encoding.drawPointSet(outputImageFilePath,DIATONIC_PITCH);
 		}
 	}
 
@@ -1096,7 +1092,7 @@ public class OMNISIA {
 		}
 		printParsedParameterValues();
 		try {
-				analyse(args);
+			analyse(args);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IncompatibleRecurSIAAlgorithmException e) {
