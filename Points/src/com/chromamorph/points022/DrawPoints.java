@@ -39,9 +39,9 @@ public class DrawPoints extends PApplet {
 	public static int drawWindowHeight = 400;
 	public static int drawWindowWidth = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static int maxNumberOfIntervals = 20;
-	private int pointWidth = 8;
-	private int pointHeight = 8;
-	private int lineWidth = 4;
+	private int pointWidth = 4;
+	private int pointHeight = 4;
+	private int lineWidth = 2;
 
 	private PatternVectorSetPairList patternVectorSetPairs = null;
 	private PatternVectorSetPair patternVectorSetPair = null;
