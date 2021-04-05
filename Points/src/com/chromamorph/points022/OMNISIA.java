@@ -96,6 +96,8 @@ public class OMNISIA {
 	private static boolean SORT_BY_PATTERN_SIZE		= false;
 	private static boolean DRAW_POINT_SET			= false;
 	public static boolean RHYTHM_ONLY				= false;
+	public static String TEC_PRIORITY_STRING		= TECQualityComparator.DEFAULT_PRIORITY_STRING;
+	public static String DUAL_TEC_PRIORITY_STRING	= TECQualityComparator.DEFAULT_PRIORITY_STRING;
 
 
 	////////////////////
@@ -137,6 +139,8 @@ public class OMNISIA {
 	private static String SORT_BY_PATTERN_SIZE_SWITCH = "sortpat";
 	private static String DRAW_POINT_SET_SWITCH		= "drawps";
 	private static String RHYTHM_ONLY_SWITCH		= "rhythm";
+	private static String TEC_PRIORITY_SWITCH		= "tecqual";
+	private static String DUAL_TEC_PRIORITY_SWITCH	= "dualtecqual";
 
 
 
@@ -149,6 +153,20 @@ public class OMNISIA {
 		String algStr = getValue(ALGORITHM_SWITCH, args);
 		if (algStr != null)
 			BASIC_ALGORITHM = BasicAlgorithm.valueOf(algStr);
+	}
+	
+	private static void getTECPriority(String[] args) {
+		String tecqual = getValue(TEC_PRIORITY_SWITCH, args);
+		if (tecqual != null)
+			TEC_PRIORITY_STRING = tecqual.trim().toLowerCase();
+	}
+	
+	private static void getDualTECPriority(String[] args) {
+		String dualtecqual = getValue(DUAL_TEC_PRIORITY_SWITCH, args);
+		if (dualtecqual != null)
+			DUAL_TEC_PRIORITY_STRING = dualtecqual.trim().toLowerCase();
+		else
+			DUAL_TEC_PRIORITY_STRING = TEC_PRIORITY_STRING;
 	}
 
 	private static void getInputFile(String[] args) {
@@ -596,6 +614,8 @@ public class OMNISIA {
 				"Sort TECs by decreasing pattern size (-"+SORT_BY_PATTERN_SIZE_SWITCH+"): " + SORT_BY_PATTERN_SIZE,
 				"Draw input point set (-"+DRAW_POINT_SET_SWITCH+"): " + DRAW_POINT_SET,
 				"Rhythm only (-"+RHYTHM_ONLY_SWITCH+"): " + RHYTHM_ONLY,
+				"TEC quality priority string (-"+TEC_PRIORITY_SWITCH+"): " + TEC_PRIORITY_STRING,
+				"Dual TEC quality priority string (-"+DUAL_TEC_PRIORITY_SWITCH+"): " + DUAL_TEC_PRIORITY_STRING,
 				""
 				);		
 	}
@@ -713,7 +733,24 @@ public class OMNISIA {
 				"",
 				"-"+RHYTHM_ONLY_SWITCH+"\tRuns the selected analysis algorithm on a rhythmic projection",
 				"\tof the input dataset. That is, it only considers the first co-ordinate of each point,",
-				"\tthe pitch co-ordinate is set to zero for every point."
+				"\tthe pitch co-ordinate is set to zero for every point.",
+				"",
+				"-"+TEC_PRIORITY_SWITCH+"\t Determines the priority with which heuristics are applied",
+				"\twhen computing the quality of a TEC. The string should be a permutation of cmvswa.",
+				"\tc = compression factor, m = compactness, v = coverage, s = pattern size, w = pattern width,",
+				"\ta = pattern bounding-box area. The heuristics are applied as successive tie-breakers, in",
+				"\tin the order in which they appear in this string. This switch determines only the way these",
+				"\theuristics are applied when comparing two TECs that are not a conjugate pair. The default",
+				"\tvalue for this string is "+TECQualityComparator.DEFAULT_PRIORITY_STRING+".",
+				"",
+				"-"+DUAL_TEC_PRIORITY_SWITCH+"\t Determines the priority with which heuristics are applied",
+				"\twhen computing the quality of a TEC when comparing two TECs that form a conjugate pair.",
+				"\tSee entry in this help for the switch, -"+TEC_PRIORITY_SWITCH+", for details regarding",
+				"\thow to construct the string value for this switch. If neither this switch nor -"+TEC_PRIORITY_SWITCH,
+				"\tare set, then the value of this string is "+TECQualityComparator.DEFAULT_PRIORITY_STRING+".",
+				"\tIf -"+TEC_PRIORITY_SWITCH+"is set, but this switch is not, then the value of this string is",
+				"\t the same as that set for -"+TEC_PRIORITY_SWITCH+".",
+				""
 				);
 	}
 
@@ -856,7 +893,9 @@ public class OMNISIA {
 				(OUTPUT_FILE!=null?OUTPUT_FILE.getAbsolutePath():null),
 				TOP_N_PATTERNS,
 				WITHOUT_CHANNEL_10,
-				SORT_BY_PATTERN_SIZE
+				SORT_BY_PATTERN_SIZE,
+				TEC_PRIORITY_STRING,
+				DUAL_TEC_PRIORITY_STRING
 				);
 	}
 
@@ -1102,6 +1141,8 @@ public class OMNISIA {
 			return;
 		}
 		getRhythmOnly(args);
+		getTECPriority(args);
+		getDualTECPriority(args);
 		printParsedParameterValues();
 		try {
 			analyse(args);
