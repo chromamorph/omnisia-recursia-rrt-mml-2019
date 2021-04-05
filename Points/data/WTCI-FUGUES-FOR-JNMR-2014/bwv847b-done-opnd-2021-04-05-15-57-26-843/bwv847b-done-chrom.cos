@@ -1,0 +1,33 @@
+T(P(p(2,0),p(3,0),p(8,0),p(10,0),p(11,0),p(14,0),p(24,0),p(25,0),p(26,0),p(30,0),p(31,0),p(33,0),p(34,0),p(35,0),p(37,0),p(39,0),p(42,0),p(43,0),p(50,0),p(51,0),p(56,0),p(57,0),p(62,0),p(63,0)),V(v(0,0),v(65,0),v(96,0),v(104,0),v(128,0),v(129,0),v(137,0),v(160,0),v(193,0),v(240,0),v(241,0),v(252,0),v(253,0),v(272,0),v(281,0),v(304,0),v(312,0),v(320,0),v(321,0),v(336,0),v(337,0),v(344,0),v(345,0),v(353,0),v(376,0),v(425,0)))
+T(P(p(4,0),p(6,0),p(12,0),p(32,0),p(36,0),p(38,0),p(44,0)),V(v(0,0),v(34,0),v(42,0),v(48,0),v(202,0),v(442,0)))
+T(P(p(149,0),p(157,0),p(205,0)),V(v(0,0),v(63,0),v(64,0),v(248,0),v(265,0)))
+T(P(p(16,0),p(22,0),p(58,0)),V(v(0,0),v(65,0),v(66,0),v(408,0)))
+T(P(p(77,0),p(83,0),p(85,0)),V(v(0,0),v(216,0),v(357,0)))
+T(P(p(18,0),p(20,0)),V(v(0,0),v(51,0),v(83,0),v(211,0)))
+T(P(p(144,0),p(209,0)),V(v(0,0),v(6,0),v(156,0)))
+T(P(p(198,0),p(258,0)),V(v(0,0),v(214,0)))
+T(P(p(420,0),p(452,0)),V(v(0,0),v(32,0)))
+T(P(p(19,0),p(64,0),p(94,0),p(156,0),p(182,0),p(259,0)),V(v(0,0)))
+
+numberOfNotes 408
+tatumsPerBar 16
+barOneStartsAt null
+compressionRatio 4.08
+runningTime 1125
+encodingLength 100
+encodingLengthWithoutResidualPointSet 94
+numberOfResidualPoints 6
+percentageOfResidualPoints 1.4705882352941178
+compressionRatioWithoutResidualPointSet 4.276595744680851
+title bwv847b-done.opnd
+numberOfTECs 10
+inputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv847b-done.opnd
+outputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv847b-done-opnd-2021-04-05-15-57-26-843\bwv847b-done-chrom.cos
+logFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv847b-done-opnd-2021-04-05-15-57-26-843\bwv847b-done-chrom.log
+outputFileExtension cos
+isDiatonic false
+withoutChannel10 false
+encoderName com.chromamorph.points022.COSIATECEncoding
+forMirex false
+mode Raw
+topNPatterns 0

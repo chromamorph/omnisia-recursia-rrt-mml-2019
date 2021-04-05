@@ -95,6 +95,7 @@ public class OMNISIA {
 	private static Algorithm RECURSIA_ALGORITHM		= Algorithm.COSIATEC;
 	private static boolean SORT_BY_PATTERN_SIZE		= false;
 	private static boolean DRAW_POINT_SET			= false;
+	public static boolean RHYTHM_ONLY				= false;
 
 
 	////////////////////
@@ -135,6 +136,7 @@ public class OMNISIA {
 	private static String RECURSIA_ALGORITHM_SWITCH	= "recalg";
 	private static String SORT_BY_PATTERN_SIZE_SWITCH = "sortpat";
 	private static String DRAW_POINT_SET_SWITCH		= "drawps";
+	private static String RHYTHM_ONLY_SWITCH		= "rhythm";
 
 
 
@@ -203,6 +205,10 @@ public class OMNISIA {
 		OUTPUT_DIR = fullOutputDirPath.toFile();
 	}
 
+	private static void getRhythmOnly(String[] args) {
+		RHYTHM_ONLY = getBooleanValue(RHYTHM_ONLY_SWITCH, args);
+	}
+	
 	private static void getDiatonicPitch(String[] args) {
 		if (inputFileIsEncodingFile())
 			DIATONIC_PITCH = INPUT_FILE.toString().toLowerCase().contains("diat");
@@ -589,6 +595,7 @@ public class OMNISIA {
 				"Basic algorithm used by RecurSIA (-"+RECURSIA_ALGORITHM_SWITCH+"): " + RECURSIA_ALGORITHM,
 				"Sort TECs by decreasing pattern size (-"+SORT_BY_PATTERN_SIZE_SWITCH+"): " + SORT_BY_PATTERN_SIZE,
 				"Draw input point set (-"+DRAW_POINT_SET_SWITCH+"): " + DRAW_POINT_SET,
+				"Rhythm only (-"+RHYTHM_ONLY_SWITCH+"): " + RHYTHM_ONLY,
 				""
 				);		
 	}
@@ -702,7 +709,11 @@ public class OMNISIA {
 				"",
 				"-"+DRAW_POINT_SET_SWITCH+"\tGenerates a PNG file and a PTS file of the input point set.",
 				"\tIf the -"+DIATONIC_PITCH_SWITCH+" switch is selected, then the output point set uses",
-				"\tmorphetic pitch."
+				"\tmorphetic pitch.",
+				"",
+				"-"+RHYTHM_ONLY_SWITCH+"\tRuns the selected analysis algorithm on a rhythmic projection",
+				"\tof the input dataset. That is, it only considers the first co-ordinate of each point,",
+				"\tthe pitch co-ordinate is set to zero for every point."
 				);
 	}
 
@@ -1090,6 +1101,7 @@ public class OMNISIA {
 			closeLogFile();
 			return;
 		}
+		getRhythmOnly(args);
 		printParsedParameterValues();
 		try {
 			analyse(args);

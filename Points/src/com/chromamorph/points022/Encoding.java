@@ -163,10 +163,18 @@ public class Encoding {
 			setTatumsPerBarAndBarOneStartsAt(this.inputFilePathString);
 			setTitle(Paths.get(inputFilePathString).getFileName().toString());
 		}
-		if (dataset != null)
-			this.dataset = dataset;
-		else if (this.inputFilePathString != null)
-			this.dataset = new PointSet(this.inputFilePathString, isDiatonic, withoutChannel10);
+		
+		if (dataset == null && this.inputFilePathString != null)
+			dataset = new PointSet(this.inputFilePathString, isDiatonic, withoutChannel10);
+		
+		if (OMNISIA.RHYTHM_ONLY) {
+			PointSet newDataset = new PointSet();
+			for (Point p : dataset.getPoints())
+				newDataset.add(new Point(p.getX(),0));
+			dataset = newDataset;
+		}
+		
+		this.dataset = dataset;
 
 		this.encoderName = this.getClass().getName();
 	}

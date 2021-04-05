@@ -1,0 +1,27 @@
+T(P(p(6,0),p(8,0),p(9,0),p(10,0),p(11,0),p(12,0),p(14,0),p(16,0),p(18,0),p(19,0),p(20,0),p(22,0),p(24,0),p(28,0),p(30,0),p(32,0),p(34,0),p(35,0),p(36,0),p(37,0),p(38,0),p(39,0),p(40,0),p(41,0),p(43,0),p(44,0),p(45,0),p(46,0),p(47,0),p(48,0),p(50,0),p(51,0),p(52,0),p(53,0),p(54,0),p(55,0),p(56,0),p(57,0),p(59,0),p(60,0),p(61,0),p(62,0),p(63,0),p(64,0),p(66,0),p(67,0),p(68,0),p(69,0),p(70,0),p(71,0),p(72,0),p(73,0),p(75,0),p(76,0),p(77,0),p(78,0),p(79,0),p(80,0),p(82,0),p(83,0),p(84,0),p(85,0),p(86,0),p(87,0),p(88,0),p(89,0),p(91,0),p(92,0),p(93,0),p(94,0),p(95,0),p(96,0),p(98,0),p(99,0),p(100,0),p(101,0),p(102,0),p(103,0),p(104,0),p(105,0),p(106,0),p(107,0),p(108,0),p(109,0),p(110,0),p(111,0),p(112,0),p(114,0),p(115,0),p(116,0),p(117,0),p(118,0),p(119,0),p(120,0),p(121,0),p(122,0),p(123,0),p(124,0),p(125,0),p(126,0),p(127,0),p(128,0),p(131,0),p(132,0),p(133,0),p(134,0),p(135,0),p(136,0),p(137,0),p(138,0),p(139,0),p(140,0),p(141,0),p(142,0),p(143,0),p(144,0),p(145,0),p(147,0),p(148,0),p(149,0),p(150,0),p(151,0),p(152,0),p(153,0),p(154,0),p(155,0),p(156,0),p(157,0),p(158,0),p(159,0),p(160,0),p(162,0),p(163,0),p(164,0),p(165,0),p(166,0),p(167,0),p(168,0),p(169,0),p(170,0),p(171,0),p(172,0),p(173,0),p(174,0),p(175,0),p(176,0),p(177,0),p(179,0),p(180,0),p(181,0),p(182,0),p(183,0),p(184,0),p(185,0),p(186,0),p(187,0),p(188,0),p(189,0),p(190,0),p(191,0),p(192,0),p(194,0),p(195,0),p(196,0),p(197,0),p(198,0),p(199,0),p(200,0),p(201,0),p(202,0),p(203,0),p(204,0),p(205,0),p(206,0),p(207,0),p(208,0),p(209,0),p(210,0),p(211,0),p(212,0),p(213,0),p(214,0),p(215,0),p(216,0),p(217,0),p(219,0),p(221,0),p(223,0)),V(v(0,0),v(32,0),v(64,0),v(112,0),v(328,0),v(344,0),v(360,0),v(367,0),v(376,0),v(392,0),v(399,0),v(408,0),v(424,0),v(426,0),v(428,0),v(430,0),v(431,0),v(432,0),v(434,0),v(436,0),v(440,0),v(442,0),v(444,0),v(453,0),v(455,0),v(647,0)))
+T(P(p(330,0),p(332,0)),V(v(0,0),v(13,0),v(19,0),v(27,0),v(29,0)))
+T(P(p(26,0),p(58,0),p(90,0)),V(v(0,0),v(654,0),v(670,0),v(686,0),v(718,0),v(750,0),v(782,0)))
+T(P(p(290,0)),V(v(0,0)))
+
+numberOfNotes 830
+tatumsPerBar 16
+barOneStartsAt null
+compressionRatio 3.6244541484716155
+runningTime 6050
+encodingLength 229
+encodingLengthWithoutResidualPointSet 228
+numberOfResidualPoints 1
+percentageOfResidualPoints 0.12048192771084337
+compressionRatioWithoutResidualPointSet 3.6359649122807016
+title bwv848b-done.opnd
+numberOfTECs 4
+inputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv848b-done.opnd
+outputFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv848b-done-opnd-2021-04-05-18-36-53-944\bwv848b-done-chrom.cos
+logFilePath D:\Source\Repos\omnisia-recursia-rrt-mml-2019\jars\..\Points\data\WTCI-FUGUES-FOR-JNMR-2014\bwv848b-done-opnd-2021-04-05-18-36-53-944\bwv848b-done-chrom.log
+outputFileExtension cos
+isDiatonic false
+withoutChannel10 false
+encoderName com.chromamorph.points022.COSIATECEncoding
+forMirex false
+mode Raw
+topNPatterns 0
